@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is this bot's purpose?",
+        "answer": "I am an advanced, anonymous moderation bot. My purpose is to help the server's moderation team manage the community efficiently and professionally. All official actions I take, like warnings or announcements, are anonymous to present a unified front."
+    },
+    {
+        "question": "How do I see the commands?",
+        "answer": "To see a full, interactive list of all my available commands, please use the `/help` command. It includes a dropdown menu to browse commands by category."
+    },
+    {
+        "question": "What does 'anonymous action' mean?",
+        "answer": "When a moderator uses a command like `/kick`, `/ban`, or `/warn`, the public notification message I post is anonymous. It does not show which moderator performed the action. This ensures all moderation appears as an official action from the entire moderation team."
+    },
+    {
+        "question": "Are moderator actions logged anywhere?",
+        "answer": "Yes. While public messages are anonymous, every single moderation action is logged internally with the responsible moderator's ID and a timestamp. This ensures full accountability within the moderation team."
+    },
+    {
+        "question": "How do I create a newline in /say or /announce?",
+        "answer": "To create a line break in the `say` or `announce` commands, simply type the characters `\\n` where you want the new line to begin. \n\n**Example:**\n`Hello world!\\nThis is a new line.`"
+    },
+    {
+        "question": "What is the difference between /say and /announce?",
+        "answer": "Both commands create anonymous embeds, but they have different purposes:\n\n- `/say` is for simple, single-paragraph messages. It only has a description and a color.\n- `/announce` is for more official posts. It requires a **title** in addition to the description and color, making it look more structured."
+    },
+    {
+        "question": "How does the warning system work?",
+        "answer": "Moderators can issue warnings to members using the `/warn` command. These warnings are saved to a database.\n\n- Admins can view a user's full, private history with `/warnings`.\n- For transparency, admins can post a temporary, public version of the history using `/history`.\n- Warnings can be removed with the `/clearwarnings` command."
+    }
+]

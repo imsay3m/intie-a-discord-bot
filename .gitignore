@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Database files
+# *.db
+# *.db-journal
+
+# Log files
+logs/
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+*.DS_Store
