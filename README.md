@@ -78,31 +78,21 @@ This bot is built with scalability and best practices in mind.
 
 ## 🚀 Getting Started
 
-_(A wiki with detailed setup instructions will be available soon.)_
+Ready to set up the bot? All detailed instructions are available on our project **[Wiki](https://github.com/imsay3m/intie-a-discord-bot/wiki)**.
 
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/your-username/your-repository-name.git
-    cd your-repository-name
-    ```
-2.  **Create a virtual environment and install dependencies:**
-    ```sh
-    python -m venv .venv
-    source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
-    pip install -r requirements.txt
-    ```
-3.  **Configure your bot:**
-    -   Rename the `.env.example` file to `.env`.
-    -   Fill in the required values: `BOT_TOKEN`, `GUILD_ID`, and `ADMIN_ROLE_ID`.
-4.  **Run the bot:**
-    ```sh
-    python main.py
-    ```
+Follow these steps in order for a successful setup:
+
+1.  **[Discord Application Setup](https://github.com/imsay3m/intie-a-discord-bot/wiki/Discord-Setup)**: First, create your bot on the Discord Developer Portal to get your necessary Token and IDs.
+2.  **[Cloning the Repository](https://github.com/imsay3m/intie-a-discord-bot/wiki#step-2-get-the-code-by-cloning-the-repository)**: Download the bot's code to your machine.
+3.  **Choose Your Hosting Method**:
+    -   **[Running the Bot Locally](https://github.com/imsay3m/intie-a-discord-bot/wiki/Running-the-Bot-Locally)** (Recommended for development or 24/7 hosting)
+    -   **[Running the Bot on Google Colab](https://github.com/imsay3m/intie-a-discord-bot/wiki/Running-the-Bot-on-Google-Colab)** (Easy for quick testing)
+4.  **[Customizing FAQs](<https://github.com/imsay3m/intie-a-discord-bot/wiki/Customizing-the-FAQ-(-info-Command)>)**: How to easily update the answers for the `/info` command.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](LINK_TO_YOUR_ISSUES_PAGE).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/imsay3m/intie-a-discord-bot/issues).
 
 ---
