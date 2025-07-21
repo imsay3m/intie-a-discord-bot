@@ -35,7 +35,9 @@ A full suite of essential tools for moderators.
 Control the flow of information in your server with powerful messaging commands.
 
 -   `/announce <title> <description> [color]`: Broadcasts a beautiful, custom-titled, and color-coded anonymous embed. Supports newlines with `\n`.
--   `/say <message>`: Sends a simple anonymous regular message. Perfect for quick statements.
+-   `/say <message>`: Sends a simple, anonymous **plain-text** message. Ideal for quick, official statements. Supports newlines with `\n`.
+-   `/task [mentions]`: Posts a pre-configured message from the `.env` file to a specific channel. This is perfect for automated reminders or recurring posts. It includes a powerful, optional `mentions` parameter allowing you to ping multiple users, multiple roles, `@here`, or `@everyone` on the fly.
+    -   **Example:** `/task mentions:@RoleA @UserB`
 
 _Screenshot placeholder for a custom announce message_
 `![Custom Announce](<PLACEHOLDER_FOR_ANNOUNCE.png>)`
