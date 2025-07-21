@@ -35,7 +35,7 @@ A full suite of essential tools for moderators.
 Control the flow of information in your server with powerful messaging commands.
 
 -   `/announce <title> <description> [color]`: Broadcasts a beautiful, custom-titled, and color-coded anonymous embed. Supports newlines with `\n`.
--   `/say <message> [color]`: Sends a simple anonymous embed with a custom message and color. Perfect for quick, official statements.
+-   `/say <message>`: Sends a simple anonymous regular message. Perfect for quick statements.
 
 _Screenshot placeholder for a custom announce message_
 `![Custom Announce](<PLACEHOLDER_FOR_ANNOUNCE.png>)`
