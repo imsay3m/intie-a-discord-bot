@@ -37,6 +37,7 @@ class ModeratorBot(commands.Bot):
             "messaging.py": settings.ENABLE_COG_MESSAGING,
             "info.py": settings.ENABLE_COG_INFO,
             "help.py": settings.ENABLE_COG_HELP,
+            "task.py": settings.ENABLE_COG_TASK,
         }
 
         for filename, is_enabled in cog_map.items():
