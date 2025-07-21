@@ -86,26 +86,21 @@ class Messaging(commands.Cog):
 
     # --- SAY COMMAND (Now in the same cog) ---
     @app_commands.command(
-        name="say", description="Sends an embedded message as the bot anonymously."
+        name="say", description="Sends a regular message as the bot anonymously."
     )
-    @app_commands.describe(
-        message="The message to say. Use '\\n' for a new line.",
-        color="Optional color name (e.g., 'red', 'blue') or hex code (e.g., '#FF5733').",
-    )
+    @app_commands.describe(message="The message to say. Use '\\n' for a new line.")
     @admin_only()
-    async def say(self, interaction: discord.Interaction, color: str, message: str):
+    async def say(self, interaction: discord.Interaction, message: str):
         await interaction.response.defer(ephemeral=True)
 
         processed_message = message.replace("\\n", "\n")
-        embed_color = parse_color(color) if color else discord.Color(0x2B2D31)
-
-        embed = discord.Embed(description=processed_message, color=embed_color)
 
         try:
-            await interaction.channel.send(embed=embed)
+            await interaction.channel.send(processed_message)
+
             logger.log_action(
                 str(interaction.user.id),
-                "SAY (EMBED)",
+                "SAY (TEXT)",
                 f"channel:{interaction.channel.id}",
                 processed_message,
             )
@@ -115,7 +110,7 @@ class Messaging(commands.Cog):
             )
 
         await interaction.edit_original_response(
-            content="✅ Your embedded message has been sent anonymously and logged."
+            content="✅ Your message has been sent anonymously and logged."
         )
         await asyncio.sleep(5)
         await interaction.delete_original_response()

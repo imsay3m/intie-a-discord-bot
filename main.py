@@ -1,11 +1,11 @@
-# main.py
 import asyncio
 import os
 
 import discord
+from discord import app_commands
 from discord.ext import commands
 
-# Import the single settings instance from our config utility
+from utils import response_utils
 from utils.config import settings
 
 
@@ -32,8 +32,6 @@ class ModeratorBot(commands.Bot):
         init_db()
 
         print("--- Loading Cogs ---")
-
-        # The cog map now references the attributes of the 'settings' object
         cog_map = {
             "moderation.py": settings.ENABLE_COG_MODERATION,
             "messaging.py": settings.ENABLE_COG_MESSAGING,
@@ -44,7 +42,6 @@ class ModeratorBot(commands.Bot):
         for filename, is_enabled in cog_map.items():
             if is_enabled:
                 try:
-                    # We have to use a relative path here for the extension loader
                     await self.load_extension(f"cogs.{filename[:-3]}")
                     print(f"✅ Loaded cog: {filename}")
                 except Exception as e:
@@ -68,9 +65,31 @@ class ModeratorBot(commands.Bot):
         print("-----------------------------------------")
 
 
+bot = ModeratorBot()
+
+
+@bot.tree.error
+async def on_app_command_error(
+    interaction: discord.Interaction, error: app_commands.AppCommandError
+):
+    """
+    Catches all errors from slash commands globally.
+    """
+    if isinstance(error, app_commands.CheckFailure):
+        # This error is raised when a decorator check (like @admin_only) fails.
+        await response_utils.send_error_message(
+            interaction, "You do not have the required permissions to use this command."
+        )
+    else:
+        print(
+            f"An unhandled error occurred in command '{interaction.command.name if interaction.command else 'unknown'}': {error}"
+        )
+        await response_utils.send_error_message(
+            interaction, "An unexpected error occurred. Please try again later."
+        )
+
+
 async def main():
-    bot = ModeratorBot()
-    # Use the token from the settings object
     await bot.start(settings.BOT_TOKEN)
 
 
